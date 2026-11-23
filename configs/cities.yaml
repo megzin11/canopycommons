@@ -1,0 +1,58 @@
+h3_resolution: 9
+h3_mean_area_m2: 105332.5
+
+stac_landsat:
+  endpoint: "https://planetarycomputer.microsoft.com/api/stac/v1/search"
+  collection: "landsat-c2-l2"
+  item_prefixes: ["LC08_L2SP_", "LC09_L2SP_"]
+  item_suffix: "_T1"
+  thermal_asset: "lwir11"
+  qa_asset: "qa_pixel"
+  qa_mask_bits: [0, 1, 2, 3, 4, 5, 7]  # fill, dilated cloud, cirrus, cloud, shadow, snow, water
+  lst_scale: 0.00341802
+  lst_offset_k: 149.0
+  kelvin_to_c: -273.15
+  baseline_months: [6, 7, 8]
+  baseline_years: [2022, 2023, 2024, 2025]
+
+normalization:
+  method: "pooled_equal_city_winsorized"
+  lower_percentile: 5
+  upper_percentile: 95
+  min_domain_weight_coverage_q: 0.67
+  refuge_walk_minutes: 10
+
+cities:
+  alexandria:
+    display_name: "Alexandria (Urban Core Pilot)"
+    role: "primary_case_study"
+    country: "Egypt"
+    boundary_source: "CAPMAS/OCHA HDX cod-ab-egy"
+    target_districts:
+      - "El Manshia"
+      - "Karmouz"
+      - "Moharam Bek"
+      - "Bab Shark"
+      - "Sidi Gaber"
+      - "El Raml 1 (First Raml — strict dense-core boundary)"
+    bbox: [29.875, 31.180, 29.975, 31.245]
+    default_center: [29.9245, 31.2058]
+    default_zoom: 12.2
+    default_budget_eur: 1500000
+    population_source: "GHS-POP R2023A (2020 estimate) + WorldPop 65+ (same product/year)"
+    landcover_check: "OSM Overpass + ESA WorldCover v200 (2021, 10m)"
+    utm_epsg: 32636
+
+  porto:
+    display_name: "Porto (EU Open-Data Transfer Preset)"
+    role: "transferability_benchmark"
+    country: "Portugal"
+    boundary_source: "Portuguese DGT OGC API (CAOP 1312)"
+    caop_code: "1312"
+    bbox: [-8.691, 41.138, -8.552, 41.186]
+    default_center: [-8.6291, 41.1579]
+    default_zoom: 12.3
+    default_budget_eur: 2500000
+    population_source: "GHS-POP R2023A (2020 estimate) + WorldPop 65+ (same product/year)"
+    landcover_check: "CLMS Street Tree Layer 2018 + Imperviousness + OSM + EEA UHI / VITO UrbClim"
+    utm_epsg: 32629

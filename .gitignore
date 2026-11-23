@@ -1,0 +1,9 @@
+# .gitignore
+.venv/
+__pycache__/
+*.pyc
+.env
+data/raw_rasters/
+frontend/node_modules/
+frontend/dist/
+.pytest_cache/
