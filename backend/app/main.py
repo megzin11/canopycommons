@@ -44,6 +44,7 @@ from backend.app.schemas import (
 async def lifespan(_app: FastAPI):
     init_db(DEFAULT_DB_PATH)
     yield
+    
 app = FastAPI(
     title="CanopyCommons API",
     version="1.0.0",
