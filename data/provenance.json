@@ -1,0 +1,78 @@
+{
+  "pooled_bounds": {
+    "lst_summer_c": {
+      "p_low": 33.21,
+      "p_high": 47.28
+    },
+    "age_65_plus_share": {
+      "p_low": 0.0359,
+      "p_high": 0.289605
+    },
+    "refuge_access_10min_share": {
+      "p_low": 0.05,
+      "p_high": 0.9
+    }
+  },
+  "cities": {
+    "alexandria": {
+      "city": "alexandria",
+      "mode": "live",
+      "built_utc": "2026-11-23T05:26:06.892990+00:00",
+      "landsat": {
+        "source": "Microsoft Planetary Computer landsat-c2-l2",
+        "scene_count": 6,
+        "scene_ids": [
+          "LC08_L2SP_177039_20230806_02_T1",
+          "LC08_L2SP_177038_20230806_02_T1",
+          "LC09_L2SP_178038_20230805_02_T1",
+          "LC09_L2SP_177039_20230729_02_T1",
+          "LC08_L2SP_177039_20230721_02_T1",
+          "LC09_L2SP_177039_20230713_02_T1"
+        ]
+      },
+      "osm": {
+        "source": "OpenStreetMap Overpass API (ODbL)",
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "extract_utc": "2026-11-23T05:26:50.554072+00:00",
+        "element_count": 886
+      },
+      "demographics_note": "Replace with GHS-POP R2023A + WorldPop 65+ GeoTIFF clipping for final publication run.",
+      "summary": {
+        "cell_count": 554,
+        "scored_cells": 363,
+        "total_population": 839600,
+        "unscored_population_share": 0.0
+      }
+    },
+    "porto": {
+      "city": "porto",
+      "mode": "live",
+      "built_utc": "2026-11-23T05:26:52.660121+00:00",
+      "landsat": {
+        "source": "Microsoft Planetary Computer landsat-c2-l2",
+        "scene_count": 6,
+        "scene_ids": [
+          "LC08_L2SP_204032_20220731_02_T1",
+          "LC09_L2SP_204032_20220707_02_T1",
+          "LC09_L2SP_204031_20220707_02_T1",
+          "LC09_L2SP_204032_20250715_02_T1",
+          "LC09_L2SP_204031_20250715_02_T1",
+          "LC08_L2SP_204031_20240704_02_T1"
+        ]
+      },
+      "osm": {
+        "source": "OpenStreetMap Overpass API (ODbL)",
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "extract_utc": "2026-11-23T05:27:30.675121+00:00",
+        "element_count": 23849
+      },
+      "demographics_note": "Replace with GHS-POP R2023A + WorldPop 65+ GeoTIFF clipping for final publication run.",
+      "summary": {
+        "cell_count": 545,
+        "scored_cells": 519,
+        "total_population": 373401,
+        "unscored_population_share": 0.0012
+      }
+    }
+  }
+}
